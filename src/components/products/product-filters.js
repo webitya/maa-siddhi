@@ -1,15 +1,16 @@
 "use client"
 
 import { categories } from "@/lib/products"
-import { Star, X } from "lucide-react"
+import { Star, X } from "@mui/icons-material"
+import { Slider } from "@mui/material"
 
 export default function ProductFilters({ filters, setFilters }) {
-  const handlePriceRangeChange = (index, value) => {
-    const newRange = [...filters.priceRange]
-    newRange[index] = Number.parseInt(value)
-    setFilters({ ...filters, priceRange: newRange })
+  // Handle price range change from slider
+  const handlePriceRangeChange = (event, newValue) => {
+    setFilters({ ...filters, priceRange: newValue })
   }
 
+  // Reset all filters
   const clearFilters = () => {
     setFilters({
       category: "",
@@ -22,13 +23,14 @@ export default function ProductFilters({ filters, setFilters }) {
 
   return (
     <div className="bg-card rounded-lg p-6 space-y-6">
+      {/* Header */}
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold text-foreground hindi-font">फिल्टर</h3>
         <button
           onClick={clearFilters}
           className="text-sm text-muted-foreground hover:text-primary flex items-center space-x-1"
         >
-          <X size={14} />
+          <X fontSize="small" />
           <span className="hindi-font">साफ़ करें</span>
         </button>
       </div>
@@ -65,30 +67,27 @@ export default function ProductFilters({ filters, setFilters }) {
       </div>
 
       {/* Price Range Filter */}
-      <div className="space-y-3">
+      <div className="space-y-2">
         <h4 className="font-medium text-foreground hindi-font">मूल्य सीमा</h4>
-        <div className="space-y-3">
-          <div className="flex items-center space-x-2">
-            <input
-              type="number"
-              placeholder="न्यूनतम"
-              value={filters.priceRange[0]}
-              onChange={(e) => handlePriceRangeChange(0, e.target.value)}
-              className="w-full bg-background border border-border rounded px-3 py-2 text-sm"
-            />
-            <span className="text-muted-foreground">-</span>
-            <input
-              type="number"
-              placeholder="अधिकतम"
-              value={filters.priceRange[1]}
-              onChange={(e) => handlePriceRangeChange(1, e.target.value)}
-              className="w-full bg-background border border-border rounded px-3 py-2 text-sm"
-            />
-          </div>
-          <div className="text-xs text-muted-foreground hindi-font">
-            ₹{filters.priceRange[0]} - ₹{filters.priceRange[1]}
-          </div>
-        </div>
+     <Slider
+  value={filters.priceRange}
+  onChange={handlePriceRangeChange}
+  valueLabelDisplay="auto"
+  min={0}
+  max={10000}      // Updated maximum
+  step={500}       // Step increment
+  marks={[
+    { value: 0, label: "₹0" },
+    { value: 2500, label: "₹2.5k" },
+    { value: 5000, label: "₹5k" },
+    { value: 7500, label: "₹7.5k" },
+    { value: 10000, label: "₹10k" },
+  ]}
+/>
+<div className="text-xs text-muted-foreground hindi-font">
+  ₹{filters.priceRange[0]} - ₹{filters.priceRange[1]}
+</div>
+
       </div>
 
       {/* Stock Filter */}
@@ -123,8 +122,8 @@ export default function ProductFilters({ filters, setFilters }) {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    size={14}
-                    className={i < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}
+                    fontSize="small"
+                    className={i < rating ? "text-yellow-400" : "text-gray-300"}
                   />
                 ))}
                 <span className="text-sm hindi-font">और अधिक</span>

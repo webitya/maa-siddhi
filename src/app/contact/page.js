@@ -14,18 +14,17 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <div className="om-symbol text-4xl text-primary mb-4">ॐ</div>
-            <h1 className="text-3xl lg:text-4xl font-bold text-foreground hindi-font mb-4">हमसे संपर्क करें</h1>
+      <main className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+          <div className="text-center space-y-4">
+            <div className="om-symbol text-5xl text-primary">ॐ</div>
+            <h1 className="text-3xl lg:text-4xl font-bold text-foreground hindi-font">हमसे संपर्क करें</h1>
             <p className="text-lg text-muted-foreground hindi-font max-w-2xl mx-auto">
               माँ दुर्गा की कृपा से हम आपकी सेवा के लिए तत्पर हैं। किसी भी प्रकार की सहायता के लिए हमसे संपर्क करें।
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             <ContactInfo />
             <ContactForm />
           </div>

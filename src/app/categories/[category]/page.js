@@ -38,18 +38,18 @@ export default function CategoryPage({ params }) {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-4">
+      <main className="py-1">
+        <div className="mx-auto px-4 sm:px-4 lg:px-4">
+          <div className="mb-3">
+            <nav className="flex items-center space-x-2 text-sm text-muted-foreground my-3">
               <Link href="/" className="hover:text-primary hindi-font">
                 होम
               </Link>
               <span>/</span>
               <span className="text-foreground hindi-font">{category.name}</span>
             </nav>
-            <h1 className="text-3xl lg:text-4xl font-bold text-foreground hindi-font mb-2">{category.name}</h1>
-            <p className="text-lg text-muted-foreground hindi-font">{category.nameEn} की संपूर्ण श्रृंखला</p>
+            {/* <h1 className="text-2xl lg:text-2xl font-bold text-foreground hindi-font mb-1">{category.name}</h1> */}
+            {/* <p className="text-lg text-muted-foreground hindi-font">{category.nameEn} की संपूर्ण श्रृंखला</p> */}
           </div>
           <ProductListing products={categoryProducts} showFilters={true} />
         </div>

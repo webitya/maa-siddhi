@@ -1,59 +1,39 @@
+"use client"
+
 export default function ContactMap() {
   return (
-    <div className="mt-12">
-      <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold text-foreground hindi-font mb-2">हमारा स्थान</h2>
-        <p className="text-muted-foreground hindi-font">रांची, झारखंड में हमारी दुकान का पता</p>
+    <div className="mt-12 mx-auto space-y-6">
+      {/* Header */}
+      <div className="text-center">
+        <h2 className="text-2xl font-bold text-foreground hindi-font mb-1">हमारा स्थान</h2>
+        <p className="text-sm text-muted-foreground hindi-font">रांची, झारखंड में हमारी दुकान का पता</p>
       </div>
 
-      <div className="bg-card rounded-xl overflow-hidden shadow-lg">
-        <div className="aspect-video bg-muted flex items-center justify-center">
-          <div className="text-center space-y-4">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-              <svg
-                className="w-8 h-8 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-foreground hindi-font">माँ सिद्धि</h3>
-              <p className="text-sm text-muted-foreground hindi-font">रांची, झारखंड</p>
-              <p className="text-xs text-muted-foreground">मुख्य बाजार के पास</p>
-            </div>
-          </div>
-        </div>
+      {/* Map Embed */}
+      <div className="rounded-xl overflow-hidden shadow-lg">
+        <iframe
+          title="Maasiddhi Ranchi Location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.123456789!2d85.3140!3d23.3440!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e5fbe8f12345%3A0xabcdef1234567890!2sRanchi%2C%20Jharkhand%2C%20India!5e0!3m2!1sen!2sin!4v1695051234567!5m2!1sen!2sin"
+          className="w-full h-64 md:h-80"
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
 
-        <div className="p-6 bg-card">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div>
-              <div className="text-lg font-semibold text-primary hindi-font">पता</div>
-              <div className="text-sm text-muted-foreground hindi-font mt-1">रांची, झारखंड, भारत</div>
-            </div>
-            <div>
-              <div className="text-lg font-semibold text-primary hindi-font">फोन</div>
-              <div className="text-sm text-muted-foreground mt-1">+91 9876543210</div>
-            </div>
-            <div>
-              <div className="text-lg font-semibold text-primary hindi-font">समय</div>
-              <div className="text-sm text-muted-foreground hindi-font mt-1">8:00 AM - 8:00 PM</div>
-            </div>
-          </div>
+      {/* Info Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+        <div className="bg-card p-4 rounded-lg shadow-sm">
+          <div className="text-sm font-semibold text-primary hindi-font">पता</div>
+          <div className="text-xs text-muted-foreground mt-1">रांची, झारखंड, भारत</div>
+        </div>
+        <div className="bg-card p-4 rounded-lg shadow-sm">
+          <div className="text-sm font-semibold text-primary hindi-font">फोन</div>
+          <div className="text-xs text-muted-foreground mt-1">+91 9876543210</div>
+        </div>
+        <div className="bg-card p-4 rounded-lg shadow-sm">
+          <div className="text-sm font-semibold text-primary hindi-font">समय</div>
+          <div className="text-xs text-muted-foreground mt-1">8:00 AM - 8:00 PM</div>
         </div>
       </div>
     </div>

@@ -13,11 +13,7 @@ export default function ProductsPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h1 className="text-3xl lg:text-4xl font-bold text-foreground hindi-font mb-2">सभी उत्पाद</h1>
-            <p className="text-lg text-muted-foreground hindi-font">हमारी संपूर्ण पूजा सामग्री और हवन सामग्री का संग्रह</p>
-          </div>
+        <div className="mx-auto px-4 sm:px-4 lg:px-4">
           <ProductListing products={products} />
         </div>
       </main>
