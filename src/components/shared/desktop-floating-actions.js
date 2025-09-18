@@ -1,8 +1,10 @@
 "use client"
 
-import { Phone, MessageCircle, ShoppingBag } from "lucide-react"
-import { generateWhatsAppLink, generateCallLink } from "@/lib/utils"
 import Link from "next/link"
+import PhoneIcon from "@mui/icons-material/Phone"
+import WhatsAppIcon from "@mui/icons-material/WhatsApp"
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag"
+import { generateWhatsAppLink, generateCallLink } from "@/lib/utils"
 
 export default function DesktopFloatingActions() {
   const phoneNumber = "9876543210"
@@ -13,10 +15,10 @@ export default function DesktopFloatingActions() {
       {/* Call Button */}
       <a
         href={generateCallLink(phoneNumber)}
-        className="bg-primary hover:bg-primary/90 text-primary-foreground p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group relative"
+        className="bg-primary hover:bg-primary/90 text-primary-foreground w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110 group relative"
         title="कॉल करें"
       >
-        <Phone size={20} />
+        <PhoneIcon fontSize="medium" />
         <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-2 py-1 rounded text-xs hindi-font opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
           कॉल करें
         </span>
@@ -27,10 +29,10 @@ export default function DesktopFloatingActions() {
         href={generateWhatsAppLink(phoneNumber, whatsappMessage)}
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group relative"
+        className="bg-green-500 hover:bg-green-600 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110 group relative"
         title="व्हाट्सऐप"
       >
-        <MessageCircle size={20} />
+        <WhatsAppIcon fontSize="medium" />
         <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-2 py-1 rounded text-xs hindi-font opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
           व्हाट्सऐप
         </span>
@@ -39,10 +41,10 @@ export default function DesktopFloatingActions() {
       {/* Shop Button */}
       <Link
         href="/products"
-        className="bg-secondary hover:bg-secondary/90 text-secondary-foreground p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group relative"
+        className="bg-secondary hover:bg-secondary/90 text-secondary-foreground w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110 group relative"
         title="शॉप करें"
       >
-        <ShoppingBag size={20} />
+        <ShoppingBagIcon fontSize="medium" />
         <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-2 py-1 rounded text-xs hindi-font opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
           शॉप करें
         </span>

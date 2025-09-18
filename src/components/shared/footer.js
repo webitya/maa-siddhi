@@ -1,11 +1,33 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Phone, MessageCircle, Mail, MapPin, Clock, Heart } from "lucide-react"
+import PhoneIcon from "@mui/icons-material/Phone"
+import WhatsAppIcon from "@mui/icons-material/WhatsApp"
+import MailIcon from "@mui/icons-material/Mail"
+import LocationOnIcon from "@mui/icons-material/LocationOn"
+import AccessTimeIcon from "@mui/icons-material/AccessTime"
+import FavoriteIcon from "@mui/icons-material/Favorite"
 import { generateWhatsAppLink, generateCallLink, generateEmailLink } from "@/lib/utils"
 
 export default function Footer() {
-  const phoneNumber = "9876543210" // Replace with actual phone number
-  const email = "info@maasiddhi.com" // Replace with actual email
+  const phoneNumber = "9876543210"
+  const email = "info@maasiddhi.com"
   const whatsappMessage = "नमस्ते! मुझे माँ सिद्धि की सेवाओं के बारे में जानकारी चाहिए।"
+
+  const [currentTime, setCurrentTime] = useState(new Date())
+
+  useEffect(() => {
+    const timer = setInterval(() => setCurrentTime(new Date()), 1000)
+    return () => clearInterval(timer)
+  }, [])
+
+  const year = currentTime.getFullYear()
+  const date = currentTime.toLocaleDateString("hi-IN", { day: "2-digit", month: "short", year: "numeric" })
+  const dayName = currentTime.toLocaleDateString("hi-IN", { weekday: "long" })
+  const hours = currentTime.getHours().toString().padStart(2, "0")
+  const minutes = currentTime.getMinutes().toString().padStart(2, "0")
+  const seconds = currentTime.getSeconds().toString().padStart(2, "0")
 
   return (
     <footer className="bg-card border-t-2 border-primary/20">
@@ -21,11 +43,10 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-muted-foreground hindi-font leading-relaxed">
-              रांची, झारखंड में स्थित विश्वसनीय पूजा सामग्री की दुकान। हम सभी प्रकार की धार्मिक आवश्यकताओं के लिए गुणवत्तापूर्ण सामग्री
-              प्रदान करते हैं।
+              रांची, झारखंड में स्थित विश्वसनीय पूजा सामग्री की दुकान। हम सभी प्रकार की धार्मिक आवश्यकताओं के लिए गुणवत्तापूर्ण सामग्री प्रदान करते हैं।
             </p>
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <Heart size={16} className="text-primary" />
+              <FavoriteIcon fontSize="small" className="text-primary" />
               <span className="hindi-font">माँ दुर्गा की कृपा से</span>
             </div>
           </div>
@@ -34,36 +55,11 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-foreground hindi-font">त्वरित लिंक</h4>
             <div className="space-y-2">
-              <Link
-                href="/"
-                className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font"
-              >
-                होम
-              </Link>
-              <Link
-                href="/products"
-                className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font"
-              >
-                सभी उत्पाद
-              </Link>
-              <Link
-                href="/categories/puja-samagri"
-                className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font"
-              >
-                पूजा सामग्री
-              </Link>
-              <Link
-                href="/categories/hawan-samagri"
-                className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font"
-              >
-                हवन सामग्री
-              </Link>
-              <Link
-                href="/contact"
-                className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font"
-              >
-                संपर्क करें
-              </Link>
+              <Link href="/" className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font">होम</Link>
+              <Link href="/products" className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font">सभी उत्पाद</Link>
+              <Link href="/categories/puja-samagri" className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font">पूजा सामग्री</Link>
+              <Link href="/categories/hawan-samagri" className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font">हवन सामग्री</Link>
+              <Link href="/contact" className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font">संपर्क करें</Link>
             </div>
           </div>
 
@@ -71,30 +67,10 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-foreground hindi-font">श्रेणियां</h4>
             <div className="space-y-2">
-              <Link
-                href="/categories/incense"
-                className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font"
-              >
-                धूप-अगरबत्ती
-              </Link>
-              <Link
-                href="/categories/flowers"
-                className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font"
-              >
-                फूल-माला
-              </Link>
-              <Link
-                href="/categories/oils"
-                className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font"
-              >
-                तेल-घी
-              </Link>
-              <Link
-                href="/categories/sweets"
-                className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font"
-              >
-                प्रसाद-मिठाई
-              </Link>
+              <Link href="/categories/incense" className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font">धूप-अगरबत्ती</Link>
+              <Link href="/categories/flowers" className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font">फूल-माला</Link>
+              <Link href="/categories/oils" className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font">तेल-घी</Link>
+              <Link href="/categories/sweets" className="block text-sm text-muted-foreground hover:text-primary transition-colors hindi-font">प्रसाद-मिठाई</Link>
             </div>
           </div>
 
@@ -103,35 +79,29 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-foreground hindi-font">संपर्क जानकारी</h4>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <MapPin size={16} className="text-primary mt-1 flex-shrink-0" />
+                <LocationOnIcon fontSize="small" className="text-primary mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-muted-foreground hindi-font">रांची, झारखंड</p>
                   <p className="text-xs text-muted-foreground">भारत</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone size={16} className="text-primary flex-shrink-0" />
-                <a
-                  href={generateCallLink(phoneNumber)}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  +91 {phoneNumber}
-                </a>
+                <PhoneIcon fontSize="small" className="text-primary flex-shrink-0" />
+                <a href={generateCallLink(phoneNumber)} className="text-sm text-muted-foreground hover:text-primary transition-colors">+91 {phoneNumber}</a>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail size={16} className="text-primary flex-shrink-0" />
-                <a
-                  href={generateEmailLink(email, "पूजा सामग्री की जानकारी", "नमस्ते,")}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {email}
-                </a>
+                <MailIcon fontSize="small" className="text-primary flex-shrink-0" />
+                <a href={generateEmailLink(email, "पूजा सामग्री की जानकारी", "नमस्ते,")} className="text-sm text-muted-foreground hover:text-primary transition-colors">{email}</a>
               </div>
               <div className="flex items-start space-x-3">
-                <Clock size={16} className="text-primary mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-muted-foreground hindi-font">सुबह 8:00 - रात 8:00</p>
-                  <p className="text-xs text-muted-foreground hindi-font">सोमवार से रविवार</p>
+                <AccessTimeIcon fontSize="small" className="text-primary mt-1 flex-shrink-0" />
+                <div className="text-sm text-muted-foreground hindi-font">
+                  <p>सुबह 8:00 - रात 8:00</p>
+                  <p>सोमवार से रविवार</p>
+                  <p>
+                    आज की तिथि: {date}, {dayName} <br />
+                    समय: {hours}:{minutes} <span className="text-red-500">{seconds}</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -139,32 +109,13 @@ export default function Footer() {
         </div>
 
         {/* Contact Buttons */}
-        <div className="mt-8 pt-8 border-t border-border">
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
-            <a
-              href={generateWhatsAppLink(phoneNumber, whatsappMessage)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
-            >
-              <MessageCircle size={20} />
-              <span className="font-medium hindi-font">व्हाट्सऐप पर ऑर्डर करें</span>
-            </a>
-            <a
-              href={generateCallLink(phoneNumber)}
-              className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
-            >
-              <Phone size={20} />
-              <span className="font-medium hindi-font">अभी कॉल करें</span>
-            </a>
-          </div>
-        </div>
+     
 
         {/* Bottom Section */}
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <p className="text-sm text-muted-foreground text-center md:text-left hindi-font">
-              © 2024 माँ सिद्धि। सभी अधिकार सुरक्षित।
+              © 2025 माँ सिद्धि। सभी अधिकार सुरक्षित।
             </p>
             <div className="flex items-center space-x-4 text-sm text-muted-foreground">
               <span className="hindi-font">गुणवत्ता की गारंटी</span>

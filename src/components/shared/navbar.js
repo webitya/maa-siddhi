@@ -2,29 +2,37 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, Phone, MessageCircle, ShoppingBag, Home, Package, Mail } from "lucide-react"
+import { usePathname } from "next/navigation"
+import MenuIcon from "@mui/icons-material/Menu"
+import CloseIcon from "@mui/icons-material/Close"
+import PhoneIcon from "@mui/icons-material/Phone"
+import WhatsAppIcon from "@mui/icons-material/WhatsApp"
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag"
+import HomeIcon from "@mui/icons-material/Home"
+import Inventory2Icon from "@mui/icons-material/Inventory2"
+import MailIcon from "@mui/icons-material/Mail"
 import { generateWhatsAppLink, generateCallLink } from "@/lib/utils"
 
 export default function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const pathname = usePathname() // get current route
 
-  const toggleDrawer = () => {
-    setIsDrawerOpen(!isDrawerOpen)
-  }
+  const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen)
+  const closeDrawer = () => setIsDrawerOpen(false)
 
-  const closeDrawer = () => {
-    setIsDrawerOpen(false)
-  }
+  const whatsappMessage =
+    "नमस्ते! मुझे माँ सिद्धि की पूजा सामग्री के बारे में जानकारी चाहिए।"
+  const phoneNumber = "9876543210"
 
-  const whatsappMessage = "नमस्ते! मुझे माँ सिद्धि की पूजा सामग्री के बारे में जानकारी चाहिए।"
-  const phoneNumber = "9876543210" // Replace with actual phone number
+  // helper to check if link is active
+  const isActive = (path) => pathname === path
 
   return (
     <>
       <nav className="bg-white shadow-lg border-b-2 border-primary/20 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className=" mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            {/* Logo and Brand */}
+            {/* Logo */}
             <div className="flex items-center space-x-3">
               <div className="om-symbol">ॐ</div>
               <Link href="/" className="flex flex-col">
@@ -35,30 +43,43 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-foreground hover:text-primary transition-colors font-medium hindi-font">
+              <Link
+                href="/"
+                className={`text-foreground hover:text-primary transition-colors font-medium hindi-font ${
+                  isActive("/") ? "text-primary font-bold" : ""
+                }`}
+              >
                 होम
               </Link>
               <Link
                 href="/products"
-                className="text-foreground hover:text-primary transition-colors font-medium hindi-font"
+                className={`text-foreground hover:text-primary transition-colors font-medium hindi-font ${
+                  isActive("/products") ? "text-primary font-bold" : ""
+                }`}
               >
                 उत्पाद
               </Link>
               <Link
                 href="/categories/puja-samagri"
-                className="text-foreground hover:text-primary transition-colors font-medium hindi-font"
+                className={`text-foreground hover:text-primary transition-colors font-medium hindi-font ${
+                  isActive("/categories/puja-samagri") ? "text-primary font-bold" : ""
+                }`}
               >
                 पूजा सामग्री
               </Link>
               <Link
                 href="/categories/hawan-samagri"
-                className="text-foreground hover:text-primary transition-colors font-medium hindi-font"
+                className={`text-foreground hover:text-primary transition-colors font-medium hindi-font ${
+                  isActive("/categories/hawan-samagri") ? "text-primary font-bold" : ""
+                }`}
               >
                 हवन सामग्री
               </Link>
               <Link
                 href="/contact"
-                className="text-foreground hover:text-primary transition-colors font-medium hindi-font"
+                className={`text-foreground hover:text-primary transition-colors font-medium hindi-font ${
+                  isActive("/contact") ? "text-primary font-bold" : ""
+                }`}
               >
                 संपर्क
               </Link>
@@ -72,14 +93,14 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-lg flex items-center space-x-2 transition-colors"
               >
-                <MessageCircle size={16} />
+                <WhatsAppIcon fontSize="small" />
                 <span className="text-sm hindi-font">व्हाट्सऐप</span>
               </a>
               <a
                 href={generateCallLink(phoneNumber)}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-3 py-2 rounded-lg flex items-center space-x-2 transition-colors"
               >
-                <Phone size={16} />
+                <PhoneIcon fontSize="small" />
                 <span className="text-sm hindi-font">कॉल</span>
               </a>
             </div>
@@ -89,7 +110,7 @@ export default function Navbar() {
               onClick={toggleDrawer}
               className="md:hidden p-2 rounded-lg text-foreground hover:bg-muted transition-colors"
             >
-              <Menu size={24} />
+              <MenuIcon fontSize="medium" />
             </button>
           </div>
         </div>
@@ -111,8 +132,11 @@ export default function Navbar() {
                   <p className="text-xs text-muted-foreground">Maa Siddhi</p>
                 </div>
               </div>
-              <button onClick={closeDrawer} className="p-2 rounded-lg text-foreground hover:bg-muted transition-colors">
-                <X size={20} />
+              <button
+                onClick={closeDrawer}
+                className="p-2 rounded-lg text-foreground hover:bg-muted transition-colors"
+              >
+                <CloseIcon fontSize="small" />
               </button>
             </div>
 
@@ -122,41 +146,51 @@ export default function Navbar() {
                 <Link
                   href="/"
                   onClick={closeDrawer}
-                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors"
+                  className={`flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors ${
+                    isActive("/") ? "bg-primary/10 font-bold" : ""
+                  }`}
                 >
-                  <Home size={20} className="text-primary" />
+                  <HomeIcon fontSize="small" className="text-primary" />
                   <span className="font-medium hindi-font">होम</span>
                 </Link>
                 <Link
                   href="/products"
                   onClick={closeDrawer}
-                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors"
+                  className={`flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors ${
+                    isActive("/products") ? "bg-primary/10 font-bold" : ""
+                  }`}
                 >
-                  <Package size={20} className="text-primary" />
+                  <Inventory2Icon fontSize="small" className="text-primary" />
                   <span className="font-medium hindi-font">सभी उत्पाद</span>
                 </Link>
                 <Link
                   href="/categories/puja-samagri"
                   onClick={closeDrawer}
-                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors"
+                  className={`flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors ${
+                    isActive("/categories/puja-samagri") ? "bg-primary/10 font-bold" : ""
+                  }`}
                 >
-                  <ShoppingBag size={20} className="text-primary" />
+                  <ShoppingBagIcon fontSize="small" className="text-primary" />
                   <span className="font-medium hindi-font">पूजा सामग्री</span>
                 </Link>
                 <Link
                   href="/categories/hawan-samagri"
                   onClick={closeDrawer}
-                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors"
+                  className={`flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors ${
+                    isActive("/categories/hawan-samagri") ? "bg-primary/10 font-bold" : ""
+                  }`}
                 >
-                  <ShoppingBag size={20} className="text-primary" />
+                  <ShoppingBagIcon fontSize="small" className="text-primary" />
                   <span className="font-medium hindi-font">हवन सामग्री</span>
                 </Link>
                 <Link
                   href="/contact"
                   onClick={closeDrawer}
-                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors"
+                  className={`flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors ${
+                    isActive("/contact") ? "bg-primary/10 font-bold" : ""
+                  }`}
                 >
-                  <Mail size={20} className="text-primary" />
+                  <MailIcon fontSize="small" className="text-primary" />
                   <span className="font-medium hindi-font">संपर्क करें</span>
                 </Link>
               </div>
@@ -169,25 +203,16 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                   className="w-full bg-green-500 hover:bg-green-600 text-white p-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
                 >
-                  <MessageCircle size={20} />
+                  <WhatsAppIcon fontSize="small" />
                   <span className="font-medium hindi-font">व्हाट्सऐप पर संपर्क करें</span>
                 </a>
                 <a
                   href={generateCallLink(phoneNumber)}
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground p-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
                 >
-                  <Phone size={20} />
+                  <PhoneIcon fontSize="small" />
                   <span className="font-medium hindi-font">अभी कॉल करें</span>
                 </a>
-              </div>
-
-              {/* Store Info */}
-              <div className="pt-4 border-t">
-                <div className="text-center space-y-2">
-                  <p className="text-sm font-medium hindi-font text-primary">स्टोर की जानकारी</p>
-                  <p className="text-xs text-muted-foreground hindi-font">रांची, झारखंड</p>
-                  <p className="text-xs text-muted-foreground">सभी प्रकार की पूजा सामग्री उपलब्ध</p>
-                </div>
               </div>
             </div>
           </div>

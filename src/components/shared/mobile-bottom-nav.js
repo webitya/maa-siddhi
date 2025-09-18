@@ -1,12 +1,15 @@
 "use client"
 
 import Link from "next/link"
-import { Phone, MessageCircle, ShoppingBag } from "lucide-react"
+import CallIcon from "@mui/icons-material/Call"
+import WhatsAppIcon from "@mui/icons-material/WhatsApp"
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag"
 import { generateWhatsAppLink, generateCallLink } from "@/lib/utils"
 
 export default function MobileBottomNav() {
   const phoneNumber = "9876543210"
-  const whatsappMessage = "नमस्ते! मुझे माँ सिद्धि की पूजा सामग्री के बारे में जानकारी चाहिए।"
+  const whatsappMessage =
+    "नमस्ते! मुझे माँ सिद्धि की पूजा सामग्री के बारे में जानकारी चाहिए।"
 
   return (
     <>
@@ -18,7 +21,7 @@ export default function MobileBottomNav() {
             href={generateCallLink(phoneNumber)}
             className="flex flex-col items-center justify-center space-y-1 bg-primary hover:bg-primary/90 text-primary-foreground transition-colors"
           >
-            <Phone size={20} />
+            <CallIcon fontSize="small" />
             <span className="text-xs hindi-font font-medium">कॉल</span>
           </a>
 
@@ -29,7 +32,7 @@ export default function MobileBottomNav() {
             rel="noopener noreferrer"
             className="flex flex-col items-center justify-center space-y-1 bg-green-500 hover:bg-green-600 text-white transition-colors"
           >
-            <MessageCircle size={20} />
+            <WhatsAppIcon fontSize="small" />
             <span className="text-xs hindi-font font-medium">व्हाट्सऐप</span>
           </a>
 
@@ -38,7 +41,7 @@ export default function MobileBottomNav() {
             href="/products"
             className="flex flex-col items-center justify-center space-y-1 bg-secondary hover:bg-secondary/90 text-secondary-foreground transition-colors"
           >
-            <ShoppingBag size={20} />
+            <ShoppingBagIcon fontSize="small" />
             <span className="text-xs hindi-font font-medium">शॉप</span>
           </Link>
         </div>
