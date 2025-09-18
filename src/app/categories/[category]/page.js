@@ -3,6 +3,7 @@ import Footer from "@/components/shared/footer"
 import ProductListing from "@/components/products/product-listing"
 import { categories, getProductsByCategory } from "@/lib/products"
 import { notFound } from "next/navigation"
+import Link from "next/link"
 
 export async function generateStaticParams() {
   return categories.map((category) => ({
@@ -41,9 +42,9 @@ export default function CategoryPage({ params }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-4">
-              <a href="/" className="hover:text-primary hindi-font">
+              <Link href="/" className="hover:text-primary hindi-font">
                 होम
-              </a>
+              </Link>
               <span>/</span>
               <span className="text-foreground hindi-font">{category.name}</span>
             </nav>
