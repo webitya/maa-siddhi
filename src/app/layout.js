@@ -1,10 +1,10 @@
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { Analytics } from "@vercel/analytics/next";
-import { Suspense } from "react";
-import MobileBottomNav from "@/components/shared/mobile-bottom-nav";
-import DesktopFloatingActions from "@/components/shared/desktop-floating-actions";
-import "./globals.css";
+import { GeistSans } from "geist/font/sans"
+import { GeistMono } from "geist/font/mono"
+import { Analytics } from "@vercel/analytics/next"
+import { Suspense } from "react"
+import MobileBottomNav from "@/components/shared/mobile-bottom-nav"
+import DesktopFloatingActions from "@/components/shared/desktop-floating-actions"
+import "./globals.css"
 
 export const metadata = {
   title: "Maa Siddhi - पूजा सामग्री और हवन सामग्री | Ranchi, Jharkhand",
@@ -72,7 +72,16 @@ export const metadata = {
     yandex: "your-yandex-verification-code",
   },
   category: "Religious Items",
-};
+  // ✅ Add favicon setup here
+  icons: {
+    icon: [
+      { url: "/favicon.ico" }, // Default
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+}
 
 export default function RootLayout({ children }) {
   const structuredData = {
@@ -104,7 +113,7 @@ export default function RootLayout({ children }) {
       name: "Ranchi",
     },
     sameAs: ["https://wa.me/919876543210"],
-  };
+  }
 
   return (
     <html
@@ -126,5 +135,5 @@ export default function RootLayout({ children }) {
         <Analytics />
       </body>
     </html>
-  );
+  )
 }
