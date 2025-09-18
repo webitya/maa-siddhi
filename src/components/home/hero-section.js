@@ -1,0 +1,143 @@
+import Link from "next/link"
+import { Star, ShoppingBag, Phone, MessageCircle } from "lucide-react"
+import { generateWhatsAppLink, generateCallLink } from "@/lib/utils"
+
+export default function HeroSection() {
+  const phoneNumber = "9876543210"
+  const whatsappMessage = "नमस्ते! मुझे पूजा सामग्री के बारे में जानकारी चाहिए।"
+
+  return (
+    <section className="relative bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/10 py-16 lg:py-24">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-10 left-10 text-6xl text-primary om-symbol">ॐ</div>
+        <div className="absolute top-32 right-20 text-4xl text-secondary om-symbol">ॐ</div>
+        <div className="absolute bottom-20 left-1/4 text-5xl text-primary om-symbol">ॐ</div>
+        <div className="absolute bottom-32 right-10 text-3xl text-secondary om-symbol">ॐ</div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <div className="flex items-center space-x-2">
+                <div className="om-symbol text-3xl text-primary">ॐ</div>
+                <span className="text-lg font-semibold text-primary hindi-font">माँ दुर्गा की कृपा से</span>
+              </div>
+              <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
+                <span className="hindi-font text-primary">माँ सिद्धि</span>
+                <br />
+                <span className="text-2xl lg:text-3xl text-muted-foreground hindi-font">पूजा सामग्री भंडार</span>
+              </h1>
+              <p className="text-lg text-muted-foreground hindi-font leading-relaxed">
+                रांची, झारखंड में स्थित विश्वसनीय पूजा सामग्री की दुकान। सभी प्रकार की धार्मिक आवश्यकताओं के लिए शुद्ध और गुणवत्तापूर्ण
+                सामग्री।
+              </p>
+            </div>
+
+            {/* Features */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <span className="text-sm font-medium hindi-font">शुद्ध सामग्री</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                <span className="text-sm font-medium hindi-font">तुरंत डिलीवरी</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <span className="text-sm font-medium hindi-font">उचित मूल्य</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                <span className="text-sm font-medium hindi-font">विश्वसनीय सेवा</span>
+              </div>
+            </div>
+
+            {/* Rating */}
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <div className="text-sm text-muted-foreground">
+                <span className="font-semibold">4.8/5</span> <span className="hindi-font">(500+ खुश ग्राहक)</span>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/products"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-colors"
+              >
+                <ShoppingBag size={20} />
+                <span className="hindi-font">उत्पाद देखें</span>
+              </Link>
+              <div className="flex gap-3">
+                <a
+                  href={generateWhatsAppLink(phoneNumber, whatsappMessage)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-lg font-semibold flex items-center space-x-2 transition-colors"
+                >
+                  <MessageCircle size={20} />
+                  <span className="hindi-font">व्हाट्सऐप</span>
+                </a>
+                <a
+                  href={generateCallLink(phoneNumber)}
+                  className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-6 py-4 rounded-lg font-semibold flex items-center space-x-2 transition-colors"
+                >
+                  <Phone size={20} />
+                  <span className="hindi-font">कॉल</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Content - Hero Image */}
+          <div className="relative">
+            <div className="relative bg-card rounded-2xl p-8 shadow-xl">
+              <img
+                src="/beautiful-durga-maa-idol-with-puja-items-diyas-flo.jpg"
+                alt="माँ दुर्गा की मूर्ति और पूजा सामग्री"
+                className="w-full h-80 object-cover rounded-lg"
+              />
+              <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-full font-semibold hindi-font">
+                विशेष छूट!
+              </div>
+            </div>
+
+            {/* Floating Cards */}
+            <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg border border-border">
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <ShoppingBag size={20} className="text-primary" />
+                </div>
+                <div>
+                  <p className="font-semibold text-sm hindi-font">1000+ उत्पाद</p>
+                  <p className="text-xs text-muted-foreground hindi-font">उपलब्ध</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute -top-6 -right-6 bg-white p-4 rounded-lg shadow-lg border border-border">
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                  <MessageCircle size={20} className="text-green-600" />
+                </div>
+                <div>
+                  <p className="font-semibold text-sm hindi-font">24/7 सेवा</p>
+                  <p className="text-xs text-muted-foreground hindi-font">उपलब्ध</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
