@@ -96,11 +96,12 @@ export default function HeroSection() {
           {/* Right Content - Hero Image */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative w-full max-w-md lg:max-w-full bg-card rounded-2xl p-4 lg:p-8 shadow-xl">
-              <img
-                src="/beautiful-durga-maa-idol-with-puja-items-diyas-flo.jpg"
-                alt="माँ दुर्गा की मूर्ति और पूजा सामग्री"
-                className="w-full h-64 lg:h-80 object-cover rounded-lg"
-              />
+          <img
+  src="/beautiful-durga-maa-idol-with-puja-items-diyas-flo.jpg"
+  alt="माँ दुर्गा की मूर्ति और पूजा सामग्री"
+  className="w-full h-64 lg:h-80 object-cover object-top rounded-lg"
+/>
+
               <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full font-semibold text-sm hindi-font">
                 विशेष छूट!
               </div>
