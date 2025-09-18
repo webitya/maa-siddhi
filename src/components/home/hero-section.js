@@ -21,7 +21,7 @@ export default function HeroSection() {
         <div className="absolute bottom-32 right-10 text-3xl text-secondary om-symbol">ॐ</div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative  mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
           
           {/* Left Content */}
