@@ -12,6 +12,7 @@ import HomeIcon from "@mui/icons-material/Home"
 import Inventory2Icon from "@mui/icons-material/Inventory2"
 import MailIcon from "@mui/icons-material/Mail"
 import { generateWhatsAppLink, generateCallLink } from "@/lib/utils"
+import Image from "next/image"
 
 export default function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -34,10 +35,8 @@ export default function Navbar() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="om-symbol">ॐ</div>
-              <Link href="/" className="flex flex-col">
-                <span className="text-xl font-bold text-primary hindi-font">माँ सिद्धि</span>
-                <span className="text-xs text-muted-foreground">Maa Siddhi</span>
+              <Link href="/" className="flex">
+                 <Image src="/logo.png" alt="Maa Siddhi" width={120} height={40} className="object-contain" />
               </Link>
             </div>
 
@@ -120,18 +119,16 @@ export default function Navbar() {
       {isDrawerOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
           {/* Backdrop */}
-          <div className="fixed inset-0 bg-black bg-opacity-50" onClick={closeDrawer}></div>
+          <div className="fixed inset-0 bg-black/10 bg-opacity-50" onClick={closeDrawer}></div>
 
           {/* Drawer */}
           <div className="fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform transition-transform">
             <div className="flex items-center justify-between p-4 border-b">
-              <div className="flex items-center space-x-3">
-                <div className="om-symbol text-lg">ॐ</div>
-                <div>
-                  <span className="text-lg font-bold text-primary hindi-font">माँ सिद्धि</span>
-                  <p className="text-xs text-muted-foreground">Maa Siddhi</p>
-                </div>
-              </div>
+               <div className="flex items-center space-x-3">
+              <Link href="/" className="flex">
+                 <Image src="/logo.png" alt="Maa Siddhi" width={120} height={40} className="object-contain" />
+              </Link>
+            </div>
               <button
                 onClick={closeDrawer}
                 className="p-2 rounded-lg text-foreground hover:bg-muted transition-colors"

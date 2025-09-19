@@ -9,6 +9,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn"
 import AccessTimeIcon from "@mui/icons-material/AccessTime"
 import FavoriteIcon from "@mui/icons-material/Favorite"
 import { generateWhatsAppLink, generateCallLink, generateEmailLink } from "@/lib/utils"
+import Image from "next/image"
 
 export default function Footer() {
   const phoneNumber = "6207732383"
@@ -35,12 +36,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
-              <div className="om-symbol text-2xl">ॐ</div>
-              <div>
-                <h3 className="text-xl font-bold text-primary hindi-font">माँ सिद्धि</h3>
-                <p className="text-sm text-muted-foreground">Maa Siddhi</p>
-              </div>
+             <div className="flex items-center space-x-3">
+              <Link href="/" className="flex">
+                 <Image src="/logo.png" alt="Maa Siddhi" width={120} height={40} className="object-contain" />
+              </Link>
             </div>
             <p className="text-sm text-muted-foreground hindi-font leading-relaxed">
               रांची, झारखंड में स्थित विश्वसनीय पूजा सामग्री की दुकान। हम सभी प्रकार की धार्मिक आवश्यकताओं के लिए गुणवत्तापूर्ण सामग्री प्रदान करते हैं।
