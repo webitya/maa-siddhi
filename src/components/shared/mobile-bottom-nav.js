@@ -7,7 +7,7 @@ import ShoppingBagIcon from "@mui/icons-material/ShoppingBag"
 import { generateWhatsAppLink, generateCallLink } from "@/lib/utils"
 
 export default function MobileBottomNav() {
-  const phoneNumber = "9876543210"
+  const phoneNumber = "6207732383"
   const whatsappMessage =
     "नमस्ते! मुझे माँ सिद्धि की पूजा सामग्री के बारे में जानकारी चाहिए।"
 

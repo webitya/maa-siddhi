@@ -24,8 +24,8 @@ export default function ProductDetail({ product }) {
   const [showShareMenu, setShowShareMenu] = useState(false)
   const [showAllReviews, setShowAllReviews] = useState(false)
 
-  const phoneNumber = "9876543210"
-  const email = "info@maasiddhi.com"
+  const phoneNumber = "6207732383"
+  const email = "maasiddhi.in@gmail.com"
 
   const images = [
     product.image,

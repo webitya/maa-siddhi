@@ -137,8 +137,8 @@ export const createFestivalReminderTemplate = (festivalName, products) => {
               </div>
               
               <p>अभी ऑर्डर करने के लिए हमसे संपर्क करें:</p>
-              <p><strong>फोन:</strong> +91 9876543210</p>
-              <p><strong>व्हाट्सऐप:</strong> +91 9876543210</p>
+              <p><strong>फोन:</strong> +91 6207732383</p>
+              <p><strong>व्हाट्सऐप:</strong> +91 6207732383</p>
               
               <p>सादर,<br><strong>माँ सिद्धि टीम</strong></p>
             </div>

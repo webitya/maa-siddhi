@@ -29,7 +29,7 @@ export default function ContactMap() {
         </div>
         <div className="bg-card p-4 rounded-lg shadow-sm">
           <div className="text-sm font-semibold text-primary hindi-font">फोन</div>
-          <div className="text-xs text-muted-foreground mt-1">+91 9876543210</div>
+          <div className="text-xs text-muted-foreground mt-1">+91 6207732383</div>
         </div>
         <div className="bg-card p-4 rounded-lg shadow-sm">
           <div className="text-sm font-semibold text-primary hindi-font">समय</div>

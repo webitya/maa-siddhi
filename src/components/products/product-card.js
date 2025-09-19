@@ -9,7 +9,7 @@ import {
 import { formatPrice, generateWhatsAppLink, generateCallLink } from "@/lib/utils"
 
 export default function ProductCard({ product, viewMode = "grid" }) {
-  const phoneNumber = "9876543210"
+  const phoneNumber = "6207732383"
 
   // LIST VIEW
   if (viewMode === "list") {

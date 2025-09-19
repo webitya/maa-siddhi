@@ -91,7 +91,7 @@ export default function RootLayout({ children }) {
     description:
       "रांची, झारखंड में पूजा सामग्री और हवन सामग्री की विश्वसनीय दुकान",
     url: "https://maasiddhi.com",
-    telephone: "+91-9876543210",
+    telephone: "+91-6207732383",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Main Road",
@@ -112,7 +112,7 @@ export default function RootLayout({ children }) {
       "@type": "City",
       name: "Ranchi",
     },
-    sameAs: ["https://wa.me/919876543210"],
+    sameAs: ["https://wa.me/916207732383"],
   }
 
   return (

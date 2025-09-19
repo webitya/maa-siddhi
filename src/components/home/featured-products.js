@@ -12,7 +12,7 @@ import { formatPrice, generateWhatsAppLink, generateCallLink } from "@/lib/utils
 
 export default function FeaturedProducts() {
   const featuredProducts = getFeaturedProducts()
-  const phoneNumber = "9876543210"
+  const phoneNumber = "6207732383"
 
   return (
     <section className="py-14 bg-muted/30">

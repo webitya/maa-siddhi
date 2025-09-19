@@ -116,9 +116,9 @@ const createAutoReplyTemplate = (customerName) => {
               
               <div class="contact-info">
                 <h3>तुरंत सहायता के लिए:</h3>
-                <p><strong>फोन:</strong> +91 9876543210</p>
-                <p><strong>व्हाट्सऐप:</strong> +91 9876543210</p>
-                <p><strong>ईमेल:</strong> info@maasiddhi.com</p>
+                <p><strong>फोन:</strong> +91 6207732383</p>
+                <p><strong>व्हाट्सऐप:</strong> +91 6207732383</p>
+                <p><strong>ईमेल:</strong> maasiddhi.in@gmail.com</p>
                 <p><strong>समय:</strong> सुबह 8:00 - रात 8:00 (सोमवार से रविवार)</p>
               </div>
               

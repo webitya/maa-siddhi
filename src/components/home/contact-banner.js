@@ -4,7 +4,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn"
 import { generateWhatsAppLink, generateCallLink } from "@/lib/utils"
 
 export default function ContactBanner() {
-  const phoneNumber = "9876543210"
+  const phoneNumber = "6207732383"
   const whatsappMessage = "नमस्ते! मुझे माँ सिद्धि की सेवाओं के बारे में जानकारी चाहिए।"
 
   return (

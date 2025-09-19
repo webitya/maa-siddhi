@@ -11,8 +11,8 @@ import { generateWhatsAppLink, generateCallLink, generateEmailLink } from "@/lib
 export default function FloatingContact() {
   const [isOpen, setIsOpen] = useState(false)
 
-  const phoneNumber = "9876543210"
-  const email = "info@maasiddhi.com"
+  const phoneNumber = "6207732383"
+  const email = "maasiddhi.in@gmail.com"
   const whatsappMessage = "नमस्ते! मुझे माँ सिद्धि की सेवाओं के बारे में जानकारी चाहिए।"
 
   const contactOptions = [

@@ -22,7 +22,7 @@ export default function Navbar() {
 
   const whatsappMessage =
     "नमस्ते! मुझे माँ सिद्धि की पूजा सामग्री के बारे में जानकारी चाहिए।"
-  const phoneNumber = "9876543210"
+  const phoneNumber = "6207732383"
 
   // helper to check if link is active
   const isActive = (path) => pathname === path
