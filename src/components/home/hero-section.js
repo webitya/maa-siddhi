@@ -4,7 +4,7 @@ import { Phone, WhatsApp, AccessTime, LocalShipping, Verified, Star } from "@mui
 import { generateWhatsAppLink, generateCallLink } from "@/lib/utils"
 
 export default function HeroSection() {
-  const phoneNumber = "9876543210"
+  const phoneNumber = "6207732383"
   const whatsappMessage = "नमस्ते! मुझे पूजा सामग्री के बारे में जानकारी चाहिए।"
 
   return (
