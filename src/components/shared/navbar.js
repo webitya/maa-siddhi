@@ -11,12 +11,13 @@ import ShoppingBagIcon from "@mui/icons-material/ShoppingBag"
 import HomeIcon from "@mui/icons-material/Home"
 import Inventory2Icon from "@mui/icons-material/Inventory2"
 import MailIcon from "@mui/icons-material/Mail"
+import ArticleIcon from "@mui/icons-material/Article" // blog icon
 import { generateWhatsAppLink, generateCallLink } from "@/lib/utils"
 import Image from "next/image"
 
 export default function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
-  const pathname = usePathname() // get current route
+  const pathname = usePathname()
 
   const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen)
   const closeDrawer = () => setIsDrawerOpen(false)
@@ -36,7 +37,13 @@ export default function Navbar() {
             {/* Logo */}
             <div className="flex items-center space-x-3">
               <Link href="/" className="flex">
-                 <Image src="/logo.png" alt="Maa Siddhi" width={120} height={40} className="object-contain" />
+                <Image
+                  src="/logo.png"
+                  alt="Maa Siddhi"
+                  width={120}
+                  height={40}
+                  className="object-contain"
+                />
               </Link>
             </div>
 
@@ -73,6 +80,14 @@ export default function Navbar() {
                 }`}
               >
                 हवन सामग्री
+              </Link>
+              <Link
+                href="/blog"
+                className={`text-foreground hover:text-primary transition-colors font-medium hindi-font ${
+                  isActive("/blog") ? "text-primary font-bold" : ""
+                }`}
+              >
+                ब्लॉग
               </Link>
               <Link
                 href="/contact"
@@ -119,16 +134,25 @@ export default function Navbar() {
       {isDrawerOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
           {/* Backdrop */}
-          <div className="fixed inset-0 bg-black/10 bg-opacity-50" onClick={closeDrawer}></div>
+          <div
+            className="fixed inset-0 bg-black/10 bg-opacity-50"
+            onClick={closeDrawer}
+          ></div>
 
           {/* Drawer */}
           <div className="fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform transition-transform">
             <div className="flex items-center justify-between p-4 border-b">
-               <div className="flex items-center space-x-3">
-              <Link href="/" className="flex">
-                 <Image src="/logo.png" alt="Maa Siddhi" width={120} height={40} className="object-contain" />
-              </Link>
-            </div>
+              <div className="flex items-center space-x-3">
+                <Link href="/" className="flex">
+                  <Image
+                    src="/logo.png"
+                    alt="Maa Siddhi"
+                    width={120}
+                    height={40}
+                    className="object-contain"
+                  />
+                </Link>
+              </div>
               <button
                 onClick={closeDrawer}
                 className="p-2 rounded-lg text-foreground hover:bg-muted transition-colors"
@@ -181,6 +205,16 @@ export default function Navbar() {
                   <span className="font-medium hindi-font">हवन सामग्री</span>
                 </Link>
                 <Link
+                  href="/blog"
+                  onClick={closeDrawer}
+                  className={`flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors ${
+                    isActive("/blog") ? "bg-primary/10 font-bold" : ""
+                  }`}
+                >
+                  <ArticleIcon fontSize="small" className="text-primary" />
+                  <span className="font-medium hindi-font">ब्लॉग</span>
+                </Link>
+                <Link
                   href="/contact"
                   onClick={closeDrawer}
                   className={`flex items-center space-x-3 p-3 rounded-lg hover:bg-muted transition-colors ${
@@ -201,7 +235,9 @@ export default function Navbar() {
                   className="w-full bg-green-500 hover:bg-green-600 text-white p-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
                 >
                   <WhatsAppIcon fontSize="small" />
-                  <span className="font-medium hindi-font">व्हाट्सऐप पर संपर्क करें</span>
+                  <span className="font-medium hindi-font">
+                    व्हाट्सऐप पर संपर्क करें
+                  </span>
                 </a>
                 <a
                   href={generateCallLink(phoneNumber)}
