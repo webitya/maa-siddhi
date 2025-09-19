@@ -8,7 +8,7 @@ export default function HeroSection() {
   const whatsappMessage = "नमस्ते! मुझे पूजा सामग्री के बारे में जानकारी चाहिए।"
 
   return (
-    <section className="relative bg-gradient-to-br from-slate-50 to-rose-50 py-20 lg:py-32 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-slate-50 to-rose-50 py-8 md:py-20 lg:py-32 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-trishul-float opacity-20">
           <svg width="120" height="160" viewBox="0 0 120 160" className="text-orange-600">
@@ -142,36 +142,36 @@ export default function HeroSection() {
         ></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 lg:gap-16 items-center">
           {/* Left Side - Content without card effect */}
-          <div className="space-y-8">
-            <div className="space-y-6">
-              <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 hindi-font leading-tight drop-shadow-lg">
+          <div className="space-y-4 md:space-y-8">
+            <div className="space-y-3 md:space-y-6">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-slate-900 hindi-font leading-tight drop-shadow-lg">
                 माँ सिद्धि
               </h1>
 
-              <div className="space-y-4">
-                <p className="text-xl text-slate-700 hindi-font font-medium drop-shadow-sm">
+              <div className="space-y-2 md:space-y-4">
+                <p className="text-lg md:text-xl text-slate-700 hindi-font font-medium drop-shadow-sm">
                   रांची, झारखंड की सबसे विश्वसनीय पूजा सामग्री की दुकान
                 </p>
 
-                <p className="text-lg text-slate-600 hindi-font max-w-lg leading-relaxed drop-shadow-sm">
+                <p className="text-base md:text-lg text-slate-600 hindi-font max-w-lg leading-relaxed drop-shadow-sm">
                   हमारे पास उच्च गुणवत्ता की प्रामाणिक पूजा सामग्री, हवन सामग्री, और धार्मिक वस्तुओं का विशाल संग्रह है। दुर्गा पूजा से लेकर
                   दैनिक पूजा तक, सभी आवश्यकताओं के लिए एक ही स्थान पर।
                 </p>
 
-                <div className="flex flex-wrap gap-4 text-sm text-slate-600 hindi-font">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <div className="flex flex-wrap gap-2 md:gap-4 text-xs md:text-sm text-slate-600 hindi-font">
+                  <div className="flex items-center space-x-1 md:space-x-2">
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full"></div>
                     <span>1000+ उत्पाद उपलब्ध</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <div className="flex items-center space-x-1 md:space-x-2">
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full"></div>
                     <span>घर तक मुफ्त डिलीवरी</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <div className="flex items-center space-x-1 md:space-x-2">
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full"></div>
                     <span>15+ वर्षों का अनुभव</span>
                   </div>
                 </div>
@@ -202,49 +202,49 @@ export default function HeroSection() {
 
           {/* Right Side - Services Grid with Glassmorphism */}
           <div className="flex justify-center lg:justify-end">
-            <div className="w-80 h-80 backdrop-blur-md bg-white/30 rounded-2xl shadow-2xl p-1 border border-white/40">
+            <div className="w-64 h-64 md:w-80 md:h-80 backdrop-blur-md bg-white/30 rounded-2xl shadow-2xl p-1 border border-white/40">
               <div className="grid grid-cols-2 gap-1 h-full">
                 {/* Service 1 - 24/7 Service */}
-                <div className="bg-gradient-to-br from-green-50/80 to-green-100/80 backdrop-blur-sm rounded-tl-xl p-6 flex flex-col items-center justify-center text-center space-y-3 border border-white/20">
-                  <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center shadow-lg">
-                    <AccessTime sx={{ fontSize: 24, color: "white" }} />
+                <div className="bg-gradient-to-br from-green-50/80 to-green-100/80 backdrop-blur-sm rounded-tl-xl p-3 md:p-6 flex flex-col items-center justify-center text-center space-y-2 md:space-y-3 border border-white/20">
+                  <div className="w-8 h-8 md:w-12 md:h-12 bg-green-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <AccessTime sx={{ fontSize: { xs: 16, md: 24 }, color: "white" }} />
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-slate-900 hindi-font drop-shadow-sm">24/7</p>
-                    <p className="text-sm text-slate-600 hindi-font drop-shadow-sm">सेवा उपलब्ध</p>
+                    <p className="font-bold text-sm md:text-lg text-slate-900 hindi-font drop-shadow-sm">24/7</p>
+                    <p className="text-xs md:text-sm text-slate-600 hindi-font drop-shadow-sm">सेवा उपलब्ध</p>
                   </div>
                 </div>
 
                 {/* Service 2 - Fast Delivery */}
-                <div className="bg-gradient-to-br from-blue-50/80 to-blue-100/80 backdrop-blur-sm rounded-tr-xl p-6 flex flex-col items-center justify-center text-center space-y-3 border border-white/20">
-                  <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center shadow-lg">
-                    <LocalShipping sx={{ fontSize: 24, color: "white" }} />
+                <div className="bg-gradient-to-br from-blue-50/80 to-blue-100/80 backdrop-blur-sm rounded-tr-xl p-3 md:p-6 flex flex-col items-center justify-center text-center space-y-2 md:space-y-3 border border-white/20">
+                  <div className="w-8 h-8 md:w-12 md:h-12 bg-blue-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <LocalShipping sx={{ fontSize: { xs: 16, md: 24 }, color: "white" }} />
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-slate-900 hindi-font drop-shadow-sm">तुरंत</p>
-                    <p className="text-sm text-slate-600 hindi-font drop-shadow-sm">डिलीवरी</p>
+                    <p className="font-bold text-sm md:text-lg text-slate-900 hindi-font drop-shadow-sm">तुरंत</p>
+                    <p className="text-xs md:text-sm text-slate-600 hindi-font drop-shadow-sm">डिलीवरी</p>
                   </div>
                 </div>
 
                 {/* Service 3 - Quality Products */}
-                <div className="bg-gradient-to-br from-orange-50/80 to-orange-100/80 backdrop-blur-sm rounded-bl-xl p-6 flex flex-col items-center justify-center text-center space-y-3 border border-white/20">
-                  <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center shadow-lg">
-                    <Verified sx={{ fontSize: 24, color: "white" }} />
+                <div className="bg-gradient-to-br from-orange-50/80 to-orange-100/80 backdrop-blur-sm rounded-bl-xl p-3 md:p-6 flex flex-col items-center justify-center text-center space-y-2 md:space-y-3 border border-white/20">
+                  <div className="w-8 h-8 md:w-12 md:h-12 bg-orange-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <Verified sx={{ fontSize: { xs: 16, md: 24 }, color: "white" }} />
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-slate-900 hindi-font drop-shadow-sm">प्रामाणिक</p>
-                    <p className="text-sm text-slate-600 hindi-font drop-shadow-sm">गुणवत्ता</p>
+                    <p className="font-bold text-sm md:text-lg text-slate-900 hindi-font drop-shadow-sm">प्रामाणिक</p>
+                    <p className="text-xs md:text-sm text-slate-600 hindi-font drop-shadow-sm">गुणवत्ता</p>
                   </div>
                 </div>
 
                 {/* Service 4 - Premium Experience */}
-                <div className="bg-gradient-to-br from-purple-50/80 to-purple-100/80 backdrop-blur-sm rounded-br-xl p-6 flex flex-col items-center justify-center text-center space-y-3 border border-white/20">
-                  <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center shadow-lg">
-                    <Star sx={{ fontSize: 24, color: "white" }} />
+                <div className="bg-gradient-to-br from-purple-50/80 to-purple-100/80 backdrop-blur-sm rounded-br-xl p-3 md:p-6 flex flex-col items-center justify-center text-center space-y-2 md:space-y-3 border border-white/20">
+                  <div className="w-8 h-8 md:w-12 md:h-12 bg-purple-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <Star sx={{ fontSize: { xs: 16, md: 24 }, color: "white" }} />
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-slate-900 hindi-font drop-shadow-sm">बेहतरीन</p>
-                    <p className="text-sm text-slate-600 hindi-font drop-shadow-sm">अनुभव</p>
+                    <p className="font-bold text-sm md:text-lg text-slate-900 hindi-font drop-shadow-sm">बेहतरीन</p>
+                    <p className="text-xs md:text-sm text-slate-600 hindi-font drop-shadow-sm">अनुभव</p>
                   </div>
                 </div>
               </div>
